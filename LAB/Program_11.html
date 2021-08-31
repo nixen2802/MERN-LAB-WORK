@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Image Map</title>
+   <style>
+      .centered{
+         align-items: center;
+         margin-left: 43%;
+      }
+      img{
+         margin-left: 30%;
+      }
+   </style>
+</head>
+<body>
+    <form name="myformmodified" class="centered">
+        <input type="text" name="shower">
+        <br>
+        <div id="showcontent">
+
+        </div>
+        <br>
+     </form>
+     <img src="PhotoFinal.png" alt="Image" usemap="#electricals" height="500" width="700"> 
+     <map name="electricals">
+        <area shape="rect" coords="0, 0, 210, 410" href="https://en.wikipedia.org/wiki/Camera" alt="Camera" onMouseOver="viewName('Camera')"  onMouseOut="viewName('')"/>
+        <area shape="rect" coords="215, 0, 430, 410" href="https://en.wikipedia.org/wiki/Headphones" alt="Headphones" onMouseOver="viewName('Headphones')"  onMouseOut="viewName('')"/>  
+        <area shape="rect" coords="470, 0, 670, 410" href="https://en.wikipedia.org/wiki/Telephone" alt="Telephone" onMouseOver="viewName('Telephone')"  onMouseOut="viewName('')"/>
+     </map>
+     <script type="text/javascript">
+           function viewName(name) {
+              document.myformmodified.shower.value=name;
+              if(name!='')
+              {
+                document.getElementById('showcontent').innerHTML=`When you click you will be redirected to ${name} wikipedia.`;
+              }
+              else
+              {
+                document.getElementById('showcontent').innerHTML="";
+              }
+           }
+     </script>
+</body>
+</html>
+
+   

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+    <style>
+        button{
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Enter Elements of array 1 : </p>
+        <input type="text" placeholder="First Element" id="first">
+        <input type="text" placeholder="Second Element" id="second">
+        <input type="text" placeholder="Third Element" id="third">
+        <input type="text" placeholder="Fourth Element" id="fourth">
+        <input type="text" placeholder="Fifth Element" id="fifth">
+    </div>
+    <div>
+        <p>Enter Elements of array 2 : </p>
+        <input type="text" placeholder="First Element" id="first2">
+        <input type="text" placeholder="Second Element" id="second2">
+        <input type="text" placeholder="Third Element" id="third2">
+        <input type="text" placeholder="Fourth Element" id="fourth2">
+        <input type="text" placeholder="Fifth Element" id="fifth2">
+    </div>
+    <br>
+    <div>
+        <button type="button" onclick="pop1()">POP FROM ARRAY 1</button>
+        <button type="button" onclick="pop2()">POP FROM ARRAY 2</button>
+        <button type="button" onclick="concat()">CONCATENATE ARRAY 1 AND ARRAY 2</button>
+        <button type="button" onclick="sort1()">SORT ARRAY 1 IN ASCENDING ORDER</button>
+        <button type="button" onclick="sort2()">SORT ARRAY 2 IN ASCENDING ORDER</button>
+    </div>
+    <br>
+    <div id="arraydisplayer">
+
+    </div>
+    <br>
+    <div id="inserter">
+
+    </div>
+    <script>
+        function array1getter(){
+            var first=document.getElementById("first").value;
+            var second=document.getElementById("second").value;
+            var third=document.getElementById("third").value;
+            var fourth=document.getElementById("fourth").value;
+            var fifth=document.getElementById("fifth").value;
+            var array1=new Array(first, second, third, fourth, fifth);
+            return array1;
+        }
+        function array2getter(){
+            var first=document.getElementById("first2").value;
+            var second=document.getElementById("second2").value;
+            var third=document.getElementById("third2").value;
+            var fourth=document.getElementById("fourth2").value;
+            var fifth=document.getElementById("fifth2").value;
+            var array2=new Array(first, second, third, fourth, fifth);
+            return array2;
+        }
+        function pop1(){
+            var array1=array1getter();
+            document.getElementById('arraydisplayer').innerHTML=`Array 1 : ${array1}`;
+            var popped=array1.pop();
+            document.getElementById('inserter').innerHTML=`Array after removal of ${popped} is : ${array1}`;
+        }
+        function pop2(){
+            var array2=array2getter();
+            document.getElementById('arraydisplayer').innerHTML=`Array 2 : ${array2}`;
+            var popped=array2.pop();
+            document.getElementById('inserter').innerHTML=`Array after removal of ${popped} is : ${array2}`;
+        }
+        function concat(){
+            var array1=array1getter();
+            var array2=array2getter();
+            document.getElementById('arraydisplayer').innerHTML=`Array 1 : ${array1}<br>Array 2 : ${array2}`;
+            var arrayconcatenated=array1.concat(array2);
+            document.getElementById('inserter').innerHTML=`After concatenation of 2 arrays final array is : ${arrayconcatenated}`;
+        }
+        function sort1(){
+            var array1=array1getter();
+            document.getElementById('arraydisplayer').innerHTML=`Array 1 : ${array1}`;
+            array1.sort();
+            document.getElementById('inserter').innerHTML=`After sorting in ascending order array is : ${array1}`;
+        }
+        function sort2(){
+            var array2=array2getter();
+            document.getElementById('arraydisplayer').innerHTML=`Array 2 : ${array2}`;
+            array2.sort();
+            document.getElementById('inserter').innerHTML=`After sorting in ascending order array is : ${array2}`;
+        }
+    </script>
+</body>
+</html>

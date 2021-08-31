@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+    <style>
+        #namer, #lnamer, #emailer, #nums, #addr, #coder, #ager, #addh{
+            background-color: red;
+        }
+        #final{
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <label>First Name : </label>
+    <input type="text" placeholder="Enter Name" id="name">
+    <br>
+    <br>
+    <div id="namer"></div>
+    <label>Last Name : </label>
+    <input type="text" placeholder="Enter Last Name" id="lastname">
+    <br>
+    <br>
+    <div id="lnamer"></div>
+    <label>Email : </label>
+    <input type="text" placeholder="Enter Email" id="email">
+    <br>
+    <br>
+    <div id="emailer"></div>
+    <label>Mobile No : </label>
+    <input type="text" placeholder="Enter Mobile No" id="mobileno">
+    <br>
+    <br>
+    <div id="nums"></div>
+    <label>Address : </label>
+    <input type="text" placeholder="Enter Address" id="address">
+    <br>
+    <br>
+    <div id="addr"></div>
+    <label>Pincode : </label>
+    <input type="text" placeholder="Enter Pincode" id="pincode">
+    <br>
+    <br>
+    <div id="coder"></div>
+    <label>Age</label>
+    <input type="text" placeholder="Enter Age" id="age">
+    <br>
+    <br>
+    <div id="ager"></div>
+    <label>Adhaar No : </label>
+    <input type="text" placeholder="Enter Adhaar No : " id=adhaarno>
+    <br>
+    <br>
+    <div id="addh" style="background-color: greenyellow;"></div>
+    <button class="btn" onclick="validate()">Validate Form</button>
+    <div id=final></div>
+    <script>
+        function validate()
+        {
+            var regex = /^[a-zA-Z]+$/;
+            var name=document.getElementById('name').value;
+            if(regex.test(name)==false)
+            {
+                if(name=="")
+                {
+                    document.getElementById('namer').innerHTML="Name can't be empty";
+                }
+                else
+                {
+                    document.getElementById('namer').innerHTML="Name can't contain numbers";
+                }
+            }
+            var name=document.getElementById('lastname').value;
+            if(regex.test(name)==false)
+            {
+                if(name=="")
+                {
+                    document.getElementById('lnamer').innerHTML="Name can't be empty";
+                }
+                else
+                {
+                    document.getElementById('lnamer').innerHTML="Name can't contain numbers";
+                }
+            }
+            regex=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var email=document.getElementById('email').value;
+            if(regex.test(email)==false)
+            {
+                if(email=="")
+                {
+                    document.getElementById('emailer').innerHTML="Email can't be empty";
+                }
+                else
+                {
+                    document.getElementById('emailer').innerHTML="Please enter valid email";
+                }
+            }
+            regex=/^\d{10}$/;
+            var mobno=document.getElementById('mobileno').value;
+            if(regex.test(mobno)==false)
+            {
+                if(mobno=="")
+                {
+                    document.getElementById('nums').innerHTML="Mobile number can't be empty";
+                }
+                else
+                {
+                    document.getElementById('nums').innerHTML="Please enter valid mobile number";
+                }
+            }
+            var addr=document.getElementById('address').value;
+            if(addr=="")
+            {
+                document.getElementById('addr').innerHTML="Address can't be empty";
+            }
+            var pin=document.getElementById('pincode').value;
+            regex=/^\d{6}$/;
+            if(regex.test(pin)==false)
+            {
+                if(pin=="")
+                {
+                    document.getElementById('coder').innerHTML="Pincode can't be empty";
+                }
+                else
+                {
+                    document.getElementById('coder').innerHTML="Please enter valid Pincode";
+                }
+            }
+            var age=document.getElementById('age').value;
+            regex=/^\d+$/;
+            if(regex.test(age)==false)
+            {
+                if(age=="")
+                {
+                    document.getElementById('ager').innerHTML="Age can't be empty";
+                }
+                else
+                {
+                    document.getElementById('ager').innerHTML="Please enter valid Age";
+                }
+            }
+            var adh=document.getElementById('adhaarno').value;
+            regex=/^\d{12}$/;
+            if(regex.test(adh)==false)
+            {
+                if(adh=="")
+                {
+                    document.getElementById('addh').innerHTML="Adhaar Number can't be empty";
+                }
+                else
+                {
+                    document.getElementById('addh').innerHTML="Please enter valid Adhaar number";
+                }
+            }
+            document.getElementById('final').innerHTML="Form validated and your information saved successfully"
+        }
+    </script>
+</body>
+</html>

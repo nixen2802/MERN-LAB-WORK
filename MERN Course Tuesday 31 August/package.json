@@ -1,0 +1,11 @@
+{
+  "name": "mern-course-tuesday-31-august",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fileops.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

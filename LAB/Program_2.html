@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="First Number" id="first">
+    <input type="text" placeholder="Operator" id="operator">
+    <input type="number" placeholder="Second Number" id="second">
+    <button type="button" onclick="calculate()">Calculate</button>
+    <script>
+        function calculate(){
+            var first=document.getElementById("first").value;
+            var operator=document.getElementById("operator").value;
+            var second=document.getElementById("second").value;
+            if(operator=='+')
+            {
+                document.write(first , " + ", second , " = " , Number(first)+Number(second));
+            }
+            else if(operator=='-')
+            {
+                document.write(first , " - ", second , " = " , Number(first)-Number(second));
+            }
+            else if(operator=='*')
+            {
+                document.write(first , " * ", second , " = " , Number(first)*Number(second));
+            }
+            else if(operator=='/')
+            {
+                document.write(first , " / ", second , " = " , Number(first)/Number(second));
+            }
+            else if(operator=='>')
+            {
+                if(Number(first)>Number(second))
+                {
+                    document.write(first , " > ", second , " = True");
+                }
+                else
+                {
+                    document.write(first , " > ", second , " = False");
+                }
+            }
+            else if(operator=='<')
+            {
+                if(Number(first)<Number(second))
+                {
+                    document.write(first , " < ", second , " = True");
+                }
+                else
+                {
+                    document.write(first , " < ", second , " = False");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

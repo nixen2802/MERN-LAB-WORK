@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function stringmethods(){
+            var upp="This string will be converted to upper case.";
+            document.write(upp.toUpperCase(),"<br>");
+            var spl="This string will be splitted into array.";
+            var our=spl.split(" ")
+            document.write(our,"<br>");
+            var swap="Here after processing, processing will be converted to finish : Processing";
+            document.write(swap.replace('Processing', 'Completed'),"<br>");
+        }
+    </script>
+</head>
+<body>
+    <p>This string will be converted to upper case.</p>
+    <p>This string will be splitted into array.</p>
+    <p>Here after processing, processing will be converted to finish : Processing</p>
+    <button class="btn" onclick="stringmethods()">Convert</button>
+</body>
+</html>

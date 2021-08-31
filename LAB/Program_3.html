@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function WriteCookie() {
+            if( document.WriteForm.student.value == "" ) {
+                alert("Please enter value in text box!!!!!!!!!");
+                return;
+            }
+            cookievalue = escape(document.WriteForm.student.value) + ";";
+            document.cookie = "name=" + cookievalue;
+            document.write("Cookie stored !!!!!<br>")
+            document.write ("Setting Cookies : " + "name=" + cookievalue );
+        }
+        function UpdateCookie() {
+            var now = new Date();
+            now.setMonth( now.getMonth() + 1 );
+            cookievalue = escape(document.UpdateForm.student.value) + ";" 
+            document.cookie = "name=" + cookievalue;
+            document.cookie = "expires=" + now.toUTCString() + ";"
+            document.write ("Setting Cookies : " + "name=" + cookievalue );
+        }
+    </script>      
+</head>
+
+<body>      
+    <form name = "WriteForm" action = "">
+        Enter name: <input type = "text" name = "student"/>
+        <button onclick="WriteCookie()">Set</button>
+    </form>   
+     <form name = "UpdateForm" action = "">
+        Enter name: <input type = "text" name = "student"/>
+        <button onclick="UpdateCookie">Update</button>
+     </form> 
+</body>
+</html>

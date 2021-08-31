@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+    }
+    </script>
+</head>
+<body>
+    <div id="Profile">
+        <div>KJSCE</div>
+        <div>Roll No : 1911027</div>
+        <div>Name : Nayan Mansukhbhai Mandliya</div>
+    </div>
+    <input type="button" onclick="printDiv('Profile')" value="Print Profile" />
+    <div id="printDiv">
+        <h1>Print</h1>
+    </div>
+    <input type="button" onclick="printDiv('printDiv')" value="Print print word" />
+</body>
+</html>

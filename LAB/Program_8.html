@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Methods</title>
+</head>
+<body>
+    <button class="btn" onclick="getdatetime()">Get Current Date and Time</button>
+    <button class="btn" onclick="getmonth()">Get Current Month</button>
+    <button class="btn" onclick="getday()">Get Day</button>
+    <div id="inserter">
+
+    </div>
+    <script>
+        function getdatetime(){
+            var temp=new Date();
+            var fullDT="Date : "+temp.getDate()+" - "+(temp.getMonth()+1)+" - "+temp.getFullYear()+"<br>Time : "+temp.getHours()+" : "+temp.getMinutes()+" : "+temp.getSeconds();
+            document.getElementById('inserter').innerHTML=`${fullDT}`;
+        }
+        function getmonth(){
+            var temp= new Date();
+            var month=temp.getMonth();
+            if(month=='0')
+            {
+                document.getElementById('inserter').innerHTML=`January`;
+            }
+            else if(month=='1')
+            {
+                document.getElementById('inserter').innerHTML=`February`;
+            }
+            else if(month=='2')
+            {
+                document.getElementById('inserter').innerHTML=`March`;
+            }
+            else if(month=='3')
+            {
+                document.getElementById('inserter').innerHTML=`April`;
+            }
+            else if(month=='4')
+            {
+                document.getElementById('inserter').innerHTML=`May`;
+            }
+            else if(month=='5')
+            {
+                document.getElementById('inserter').innerHTML=`June`;
+            }
+            else if(month=='6')
+            {
+                document.getElementById('inserter').innerHTML=`July`;
+            }
+            else if(month=='7')
+            {
+                document.getElementById('inserter').innerHTML=`August`;
+            }
+            else if(month=='8')
+            {
+                document.getElementById('inserter').innerHTML=`September`;
+            }
+            else if(month=='9')
+            {
+                document.getElementById('inserter').innerHTML=`October`;
+            }
+            else if(month=='10')
+            {
+                document.getElementById('inserter').innerHTML=`November`;
+            }
+            else
+            {
+                document.getElementById('inserter').innerHTML=`December`;
+            }
+        }
+        function getday(){
+            var temp=new Date();
+            var day=temp.getDay();
+            if(day=='0')
+            {
+                document.getElementById('inserter').innerHTML=`Today is Sunday`;
+            }
+            else if(day=='1')
+            {
+                document.getElementById('inserter').innerHTML=`Today is Monday`;
+            }
+            else if(day=='2')
+            {
+                document.getElementById('inserter').innerHTML=`Today is Tuesday`;
+            }
+            else if(day=='3')
+            {
+                document.getElementById('inserter').innerHTML=`Today is Wednesday`;
+            }
+            else if(day=='4')
+            {
+                document.getElementById('inserter').innerHTML=`Today is Thursday`;
+            }
+            else if(day=='5')
+            {
+                document.getElementById('inserter').innerHTML=`Today is Friday`;
+            }
+            else
+            {
+                document.getElementById('inserter').innerHTML=`Today is Saturday`;
+            }
+        }
+    </script>
+</body>
+</html>

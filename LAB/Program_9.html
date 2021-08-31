@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Methods</title>
+</head>
+<body>
+    <input type="number" placeholder="Enter Number" id="first">
+    <button class="btn" onclick="absolute()">Get Absolute Value</button>
+    <div id="getabs"></div>
+    <input type="number" placeholder="Enter Number" id="second">
+    <button class="btn" onclick="cosine()">Get Cosine</button>
+    <div id="getcos"></div>
+    <input type="number" placeholder="Enter Number" id="fourth">
+    <button class="btn" onclick="integer()">Get Integer part</button>
+    <div id="getint"></div>
+    <script>
+        function absolute(){
+            var ab=document.getElementById('first').value;
+            document.getElementById('getabs').innerHTML=`Absolute value : ${Math.abs(ab)}`;
+        }
+        function cosine(){
+            var ab=document.getElementById('second').value;
+            ab=Number(ab);
+            document.getElementById('getcos').innerHTML=`Cosine value : ${Math.cos(ab)}`;
+        }
+        function integer(){
+            var ab=document.getElementById('fourth').value;
+            document.getElementById('getint').innerHTML=`Integer value : ${Math.trunc(ab)}`;
+        }
+    </script>
+</body>
+</html>

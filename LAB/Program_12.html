@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        #parrot{
+            position: absolute;
+            margin-bottom: 15vh;
+            height: 17vh;
+            width: 10vw;
+        }
+        #parrot2{
+            position: absolute;
+            margin-top: 100px;
+            height: 20vh;
+            width: 10vw;
+            padding-top: 10px;
+            transform: scaleX(-1);
+        }
+        .tree{
+            background-size: cover; 
+            height: 98vh;
+            width: 100%;
+        }
+        #baba{
+            position: absolute;
+            margin-top: 300px;
+            margin-left: 34%;
+        }
+    </style>
+    <script>
+            var parrot1=null;
+            var parrot2=null;
+            var baba=null;
+            var animate1;
+            var animate2;   
+            var animate3;
+            var animate4;
+            var flag;
+            function init() 
+            {
+               parrot1=document.getElementById('parrot');
+               parrot2=document.getElementById('parrot2');
+               baba=document.getElementById('baba');
+               parrot1.style.left='0px'; 
+               parrot2.style.right='0px';
+               baba.style.top='0px';
+            }
+            function moveRight() {
+               parrot1.style.left = parseInt(parrot1.style.left) + 10 + 'px';
+               if(parrot1.style.left=="1400px")
+               {
+                   parrot1.style.left='0px';
+               }
+               animate1=setTimeout(moveRight,50);
+            }
+            function move()
+            {
+                parrot2.style.right = parseInt(parrot2.style.right) + 10 + 'px';
+                if(parrot2.style.right=="1400px")
+                {
+                    parrot2.style.right='0px';
+                }
+                animate2=setTimeout(move,50);
+            }
+            function up()
+            {
+                if(parseInt(baba.style.top)==30 || flag==1)
+                {
+                    flag=1;
+                    baba.style.top=parseInt(baba.style.top)-1+'px';
+                    if(parseInt(baba.style.top)==0)
+                    {
+                        flag=0;
+                    }
+                }
+                else
+                {
+                    baba.style.top=parseInt(baba.style.top)+1+'px';
+                    flag=0;
+                }
+                animate3=setTimeout(up,50);
+            }
+            window.onload=init;
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="moveRight(); move(); up();">Click to start animation.</button>
+    </div>
+    <img src="parrot.jpg" alt="parrot" id="parrot">
+    <img src="parrot.jpg" alt="parrot" id="parrot2">
+    <div>
+        <img src="Cartoon.jpg" alt="tree" height="400px" width="400px" id="baba">
+        <img src="Trees.png" alt="tree" class="tree">
+    </div>
+</body>
+</html>

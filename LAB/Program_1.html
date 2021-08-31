@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function alertDialog(){
+            alert('You have clicked alert dialog box');
+        }
+        function confirmDialog(){
+            var value=confirm('Have you clicked confirm dialogue box??');
+            if(value==true)
+            {
+                document.write('Ohhhh nice....... you have clicked confirm dialogue box!!!');
+                return true;
+            }
+            else
+            {
+                document.write('You havent click confirm dialogue box!!!!');
+                return false;
+            }
+        }
+        function promptDialog(){
+            var value=prompt('May I know your name please : ');
+            if(value=="")
+            {
+                document.write('You havent understood the concept of prompt!!!');
+            }
+            else
+            {
+                document.write('You have successfully understood the concept of prompt!!!!!<br>');
+                document.write('Welcome ',value);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button class="btn" onclick="alertDialog()">Alert Dialogue Box</button>
+    <button class="btn" onclick="confirmDialog()">Confirm Dialogue Box</button>
+    <button class="btn" onclick="promptDialog()">Prompt Dialogue Box</button>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .parrot{
+            position: absolute;
+            margin-bottom: 15vh;
+            height: 17vh;
+            width: 10vw;
+            animation:linear infinite;
+            animation-name: run;
+            animation-duration: 5s;
+        }
+        .parrot2{
+            position: absolute;
+            margin-top: 150px;
+            height: 20vh;
+            width: 10vw;
+            animation:linear infinite;
+            animation-name: run;
+            animation-duration: 9s;
+            padding-top: 15px;
+        }
+        .tree{
+            background-size: cover; 
+            position: absolute;
+            height: 99vh;
+            width: 99% 
+        }
+        .floater{
+            animation-name: floating;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            margin-top: 300px;
+            margin-left: 34%;
+        }
+        @keyframes floating{
+            0% { transform: translate(0,  0px); }
+            50%  { transform: translate(0, 15px); }
+            100%   { transform: translate(0, 0px); }   
+        }
+        @keyframes run{
+            from {left: 0px;}
+            to {left: 89%}
+        }
+    </style>
+</head>
+<body>
+    <img src="parrot.jpg" alt="parrot" class="parrot">
+    <img src="parrot.jpg" alt="parrot" class="parrot2">
+    <div>
+        <img src="Trees.png" alt="tree" class="tree">
+        <img src="Cartoon.jpg" alt="tree" height="400px" width="400px" class="floater">
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function stringmethods(){
+            var itl="This string will be converted to Italics.";
+            document.write(itl.italics(),"<br>");
+            var strk="This string will be strike through.";
+            document.write(strk.strike(),"<br>");
+            var big="Here after processing entire string will be bigger.";
+            document.write(big.big());
+        }
+    </script>
+</head>
+<body>
+    <p>This string will be converted to Italics.</p>
+    <p>This string will be strike through.</p>
+    <p>Here after processing entire string will be bigger.</p>
+    <button class="btn" onclick="stringmethods()">Convert</button>
+</body>
+</html>
