@@ -1,0 +1,19 @@
+{
+  "name": "mern-lab-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nixen2802/MERN-LAB-WORK.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nixen2802/MERN-LAB-WORK/issues"
+  },
+  "homepage": "https://github.com/nixen2802/MERN-LAB-WORK#readme"
+}

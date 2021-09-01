@@ -1,0 +1,3 @@
+Modify the event with http module.
+Notify the developer whenenver new user signed up.
+To define user defined class and use it with event emitter.
