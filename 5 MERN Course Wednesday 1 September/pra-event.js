@@ -1,7 +1,6 @@
 const http=require('http');
 const eventobj=require('events')
 const server=http.createServer((req,res)=>{
-    res.write('Nayan');
     var emitter=new eventobj.EventEmitter();
     emitter.on('first',function(){
         res.write("First is working fine!!!")
