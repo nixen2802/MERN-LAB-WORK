@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "inquirer": "^8.1.2",
+    "line-reader": "^0.4.0",
     "prompt-sync": "^4.2.0"
   }
 }
