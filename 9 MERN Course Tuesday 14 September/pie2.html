@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "dark1",
+            title: {
+                text: "Best Stock of 2021"
+            },
+            data: [{
+                type: "column",
+                startAngle: 240,
+                yValueFormatString: "##0.00\"%\"",
+                indexLabel: "{label} {y}",
+                dataPoints: [
+                    {y: 30.3, label: "Reliance"},
+                    {y: 29.7, label: "ITC"},
+                    {y: 13.2, label: "Happiest Minds"},
+                    {y: 16.8, label: "TCS"},
+                    {y: 10, label: "Infosys"}
+		        ]
+	        }]
+        });
+        chart.render();
+    }
+    </script>
+</head>
+<body>
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

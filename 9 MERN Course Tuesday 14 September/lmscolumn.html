@@ -1,0 +1,319 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+    <script>
+        window.onload = function () {
+            //Column chart implementation
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                theme: 'dark1',
+                title:{
+                    text: "Placements Registration"
+                },	
+                axisY: {
+                    title: "Appeared",
+                    titleFontColor: "red",
+                    lineColor: "white",
+                    labelFontColor: "white",
+                    tickColor: "white"
+                },
+                axisY2: {
+                    title: "Placed",
+                    titleFontColor: "#39ff14",
+                    lineColor: "#C0504E",
+                    labelFontColor: "#C0504E",
+                    tickColor: "#C0504E"
+                },	
+                toolTip: {
+                    shared: true
+                },
+                data: [{
+                    type: "column",
+                    name: "Students Appeared",
+                    legendText: "Students Appeared",
+                    showInLegend: true, 
+                    dataPoints:[
+                        { label: "2015", y: 610 },
+                        { label: "2016", y: 620 },
+                        { label: "2017", y: 630 },
+                        { label: "2018", y: 640 },
+                        { label: "2019", y: 650 },
+                        { label: "2020", y: 660 }
+                    ]
+                },
+                {
+                    type: "column",	
+                    name: "Students Placed",
+                    legendText: "Students Placed",
+                    axisYType: "secondary",
+                    showInLegend: true,
+                    dataPoints:[
+                        { label: "2015", y: 500 },
+                        { label: "2016", y: 400 },
+                        { label: "2017", y: 595 },
+                        { label: "2018", y: 475 },
+                        { label: "2019", y: 630 },
+                        { label: "2020", y: 650 }
+                    ]
+                }]
+            });
+            chart.render();
+            //Bar chart implementation
+            var chart2 = new CanvasJS.Chart("chartContainer2", {
+            animationEnabled: true,	
+            theme: "dark2",
+            title:{
+                text:"Language Analaysis in India"
+            },
+            axisX:{
+                interval: 1
+            },
+            axisY2:{
+                interlacedColor: "rgba(1,77,101,.2)",
+                gridColor: "rgba(1,77,101,.1)",
+                title: "Languages"
+            },
+            data: [{
+                type: "bar",
+                name: "languages",
+                axisYType: "secondary",
+                color: "#39ff14",
+                dataPoints: [
+                    {y: 15, label:"Assamese"},
+                    {y: 25, label:"Kutchhi"},
+                    {y: 35, label:"Kannada"},
+                    {y: 45, label:"Tamil"},
+                    {y: 55, label:"Urdu"},
+                    {y: 65, label:"Marathi"},
+                    {y: 75, label:"Hindi"},
+                    {y: 85, label:"Gujarati"},
+                ]
+            }]
+            });
+            chart2.render();
+            //Line chart implementation
+            var chart3 = new CanvasJS.Chart("chartContainer3", {
+            animationEnabled: true,
+            theme: "dark2",
+            title:{
+                text: "Lecture Attendance"
+            },
+            axisX:{
+                valueFormatString: "DD MMM, YYYY",
+                crosshair: {
+                    enabled: true,
+                    snapToDataPoint: true
+                }
+            },
+            axisY: {
+                title: "Number of Students Attending lectures",
+                includeZero: true,
+                crosshair: {
+                    enabled: true
+                }
+            },
+            toolTip:{
+                shared:true
+            },  
+            legend:{
+                cursor:"pointer",
+                verticalAlign: "bottom",
+                horizontalAlign: "left",
+                dockInsidePlotArea: true,
+            },
+            data: [{
+                type: "line",
+                showInLegend: true,
+                name: "Parttimers",
+                markerType: "square",
+                xValueFormatString: "DD MMM, YYYY",
+                color: "blue",
+                dataPoints: [
+                    { x: new Date(2021, 1, 1), y: 450 },
+                    { x: new Date(2021, 2, 1), y: 300 },
+                    { x: new Date(2021, 3, 1), y: 350 },
+                    { x: new Date(2021, 4, 1), y: 375 },
+                    { x: new Date(2021, 5, 1), y: 500 },
+                    { x: new Date(2021, 6, 1), y: 480 },
+                    { x: new Date(2021, 7, 1), y: 490 },
+                ]
+            },
+            {
+                type: "line",
+                showInLegend: true,
+                name: "Regulars",
+                lineDashType: "dash",
+                color: "yellow",
+                dataPoints: [
+                    { x: new Date(2021, 1, 1), y: 300 },
+                    { x: new Date(2021, 2, 1), y: 330 },
+                    { x: new Date(2021, 3, 1), y: 400 },
+                    { x: new Date(2021, 4, 1), y: 350 },
+                    { x: new Date(2021, 5, 1), y: 390 },
+                    { x: new Date(2021, 6, 1), y: 410 },
+                    { x: new Date(2021, 7, 1), y: 200 },
+                ]
+            }]
+        });
+        chart3.render();
+        //Area chart implementation
+        var chart4 = new CanvasJS.Chart("chartContainer4", {
+            animationEnabled: true,
+            exportEnabled: true,
+            theme: "dark2",
+            title:{
+                text: "Temperature in Mumbai - July 2021"
+            },
+            axisY: {
+                title: "Temperature (°C)",
+                suffix: " °C"
+            },
+            axisX: {
+                valueFormatString: "DD MMMM, YYYY"
+            },
+            data: [
+            {
+                type: "rangeArea",
+                xValueFormatString: "DD MMMM", 
+                yValueFormatString: "#0.## °C",
+                toolTipContent: " <span style=\"color:#4F81BC\">{x}</span><br><b>Min:</b> {y[0]}<br><b>Max:</b> {y[1]}",
+                color: "green",
+                dataPoints: [
+                    { x: new Date(2021,06,20), y:[20, 36] },
+                    { x: new Date(2021,06,21), y:[19, 30] },
+                    { x: new Date(2021,06,22), y:[23, 33] },
+                    { x: new Date(2021,06,23), y:[22, 34] },
+                    { x: new Date(2021,06,24), y:[27, 34] },
+                    { x: new Date(2021,06,25), y:[24, 29] },
+                    { x: new Date(2021,06,26), y:[26, 38] },
+                    { x: new Date(2021,06,27), y:[23, 32] },
+                    { x: new Date(2021,06,28), y:[20, 40] },
+                    { x: new Date(2021,06,29), y:[27, 38] },
+                    { x: new Date(2021,06,30), y:[22, 25] }
+                ]
+            }]
+        });
+        chart4.render();
+        //Stacked chart implementation
+        var chart5=new CanvasJS.Chart("chartContainer5",{
+            animationEnabled: true,
+            theme: "dark1",
+            title:{
+                text: "Placement Statistics in XYZ college"
+            },
+            axisX: {
+                interval: 1,
+                intervalType: "year",
+                valueFormatString: "YYYY"
+            },
+            axisY: {
+                suffix: "%"
+            },
+            toolTip: {
+                shared: true
+            },
+            legend: {
+                reversed: true,
+                verticalAlign: "center",
+                horizontalAlign: "right"
+            },
+            data: [{
+                type: "stackedColumn100",
+                name: "Computers",
+                showInLegend: true,
+                xValueFormatString: "YYYY",
+                yValueFormatString: "#,##0\"%\"",
+                dataPoints: [
+                    { x: new Date(2015,0), y: 50 },
+                    { x: new Date(2016,0), y: 51 },
+                    { x: new Date(2017,0), y: 52 },
+                    { x: new Date(2018,0), y: 53 },
+                    { x: new Date(2019,0), y: 54 },
+                    { x: new Date(2020,0), y: 55 },
+                    { x: new Date(2021,0), y: 56 }
+                ]
+            }, 
+            {
+                type: "stackedColumn100",
+                name: "IT",
+                showInLegend: true,
+                xValueFormatString: "YYYY",
+                yValueFormatString: "#,##0\"%\"",
+                dataPoints: [
+                    { x: new Date(2015,0), y: 20 },
+                    { x: new Date(2016,0), y: 18 },
+                    { x: new Date(2017,0), y: 19 },
+                    { x: new Date(2018,0), y: 17 },
+                    { x: new Date(2019,0), y: 21 },
+                    { x: new Date(2020,0), y: 20 },
+                    { x: new Date(2021,0), y: 20 }
+                ]
+            }, 
+            {
+                type: "stackedColumn100",
+                name: "Mechanical",
+                showInLegend: true,
+                xValueFormatString: "YYYY",
+                yValueFormatString: "#,##0\"%\"",
+                dataPoints: [
+                    { x: new Date(2015,0), y: 10 },
+                    { x: new Date(2016,0), y: 11 },
+                    { x: new Date(2017,0), y: 9 },
+                    { x: new Date(2018,0), y: 12 },
+                    { x: new Date(2019,0), y: 11 },
+                    { x: new Date(2020,0), y: 13 },
+                    { x: new Date(2021,0), y: 10 }
+                ]
+            },
+            {
+                type: "stackedColumn100",
+                name: "ETRX",
+                showInLegend: true,
+                xValueFormatString: "YYYY",
+                yValueFormatString: "#,##0\"%\"",
+                dataPoints: [
+                    { x: new Date(2015,0), y: 5 },
+                    { x: new Date(2016,0), y: 5 },
+                    { x: new Date(2017,0), y: 5 },
+                    { x: new Date(2018,0), y: 6 },
+                    { x: new Date(2019,0), y: 7 },
+                    { x: new Date(2020,0), y: 8 },
+                    { x: new Date(2021,0), y: 10 }
+                ]
+            },
+            {
+                type: "stackedColumn100",
+                name: "EXTC",
+                showInLegend: true,
+                xValueFormatString: "YYYY",
+                yValueFormatString: "#,##0\"%\"",
+                dataPoints: [
+                    { x: new Date(2015,0), y: 4 },
+                    { x: new Date(2016,0), y: 3 },
+                    { x: new Date(2017,0), y: 5 },
+                    { x: new Date(2018,0), y: 2 },
+                    { x: new Date(2019,0), y: 8 },
+                    { x: new Date(2020,0), y: 6 },
+                    { x: new Date(2021,0), y: 10 }
+                ]
+            }
+        ]
+        });
+        chart5.render();
+        }
+    </script>
+</head>
+<body>
+    <h1>Column Chart: </h1>
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <h1>Bar Chart: </h1>
+    <div id="chartContainer2" style="height: 370px; width: 100%;"></div>
+    <h1>Line Chart: </h1>
+    <div id="chartContainer3" style="height: 370px; width: 100%"></div>
+    <h1>Area Chart: </h1>
+    <div id="chartContainer4" style="height: 370px; width: 100%"></div>
+    <h1>Stacked Chart: </h1>
+    <div id="chartContainer5" style="height: 370px; width: 100%"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

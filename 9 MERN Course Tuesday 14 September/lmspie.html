@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            //Pie chart
+            var chart = new CanvasJS.Chart("chartContainer", {
+            exportEnabled: true,
+            animationEnabled: true,
+            theme: "dark2",
+            title:{
+                text: "Most Used Tech Stacks"
+            },
+            legend:{
+                cursor: "pointer",
+                itemclick: explodePie
+            },
+            data: [{
+                type: "pie",
+                showInLegend: true,
+                toolTipContent: "{name}: <strong>{y}%</strong>",
+                indexLabel: "{name} - {y}%",
+                dataPoints: [
+                    { y: 25, name: "MERN", exploded: true },
+                    { y: 15, name: "MEAN" },
+                    { y: 30, name: "Django", color: "#39ff14"},
+                    { y: 15, name: "JavaSprint" },
+                    { y: 7.5, name: "C++" },
+                    { y: 7.5, name: "Jquery" }
+                ]
+            }]
+        });
+        chart.render();
+        //Doughnut chart
+        var chart2=new CanvasJS.Chart("chartContainer2", {
+            theme: "dark2",
+            exportFileName: "Doughnut Chart",
+            exportEnabled: true,
+            animationEnabled: true,
+            title:{
+                text: "Sectors in Indian stock market"
+            },
+            legend:{
+                cursor: "pointer"
+            },
+            data: [{
+                type: "doughnut",
+                innerRadius: 90,
+                showInLegend: true,
+                toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
+                indexLabel: "{name} - #percent%",
+                dataPoints: [
+                    { y: 100, name: "Agriculture" },
+                    { y: 80, name: "Education" },
+                    { y: 90, name: "Finance" },
+                    { y: 70, name: "Trade" },
+                    { y: 10, name: "Hospitality" },
+                    { y: 10, name: "Production"},
+                ]
+            }]
+        });
+        chart2.render();
+        //Funnel chart
+        var chart3=new CanvasJS.Chart("chartContainer3", {
+            animationEnabled: true,
+            theme: "dark1",
+            title:{
+                text: "TechStack Overview"
+            },
+            data: [{
+                type: "funnel",
+                indexLabel: "{label} - {y}",
+                toolTipContent: "<b>{label}</b>: {y}",
+                neckWidth: 10,
+                neckHeight: 0,
+                valueRepresents: "area",
+                dataPoints: [
+                    { y: 100, label: "C" },
+                    { y: 85, label: "Java" },
+                    { y: 80, label: "Python" },
+                    { y: 65, label: "Django" },
+                    { y: 55, label: "MERN" },
+                    { y: 30, label: "MEAN" }
+                ]
+            }]
+        });
+        chart3.render();
+        //Pyramid chart
+        var chart4=new CanvasJS.Chart("chartContainer4", {
+            animationEnabled: true,
+            exportEnabled: true,
+            theme: "dark2",
+            title:{
+                text: "Economic Distribution in India"
+            },
+            data: [{
+                type: "pyramid",
+                yValueFormatString: "#\"%\"",
+                indexLabelFontColor: "#39ff14",
+                indexLabelFontSize: 16,
+                indexLabel: "{label} - {y}",
+                dataPoints: [
+                    { y: 75, label: "Poor", color: "violet"},
+                    { y: 50, label: "Lower Middle Class", color: "indigo"},
+                    { y: 40, label: "Middle Class", color: "blue" },
+                    { y: 37, label: "Upper Middle Class", color: "green" },
+                    { y: 20, label: "Rich", color: "yellow" }
+                ]
+            }]
+        });
+        chart4.render();
+        //Time-Series chart
+        var chart5=new CanvasJS.Chart("chartContainer5",{
+            animationEnabled: true,
+            theme: "dark2",
+            title:{
+                text: "Reliance (RIL Industries)"
+            },
+            axisX:{
+                title: "Price",
+                gridThickness: 2
+            },
+            axisY: {
+                title: "Time"
+            },
+            data: [
+            {        
+                type: "line",
+                color: "#39ff14",
+                toolTipContent: "<b>{x}</b>: {y}",
+                dataPoints: [
+                    {x: new Date(Date.UTC(2021, 09, 14,4,15) ), y: 15 },
+                    {x: new Date(Date.UTC(2021, 09, 14,4,30) ), y: 20 },
+                    {x: new Date(Date.UTC(2021, 09, 14,4,45) ), y: 14 },
+                    {x: new Date(Date.UTC(2021, 09, 14,4,60) ), y: 13 },
+                    {x: new Date(Date.UTC(2021, 09, 14,5,15) ), y: 12 },
+                    {x: new Date(Date.UTC(2021, 09, 14,5,30) ), y: 10 },
+                    {x: new Date(Date.UTC(2021, 09, 14,5,45) ), y: 9 },
+                    {x: new Date(Date.UTC(2021, 09, 14,5,60) ), y: 15 },
+                    {x: new Date(Date.UTC(2021, 09, 14,6,15) ), y: 22 },
+                    {x: new Date(Date.UTC(2021, 09, 14,6,30) ), y: 25 },
+                    {x: new Date(Date.UTC(2021, 09, 14,6,45) ), y: 28 },
+                    {x: new Date(Date.UTC(2021, 09, 14,6,60) ), y: 30 },
+                    {x: new Date(Date.UTC(2021, 09, 14,7,15) ), y: 25 },
+                    {x: new Date(Date.UTC(2021, 09, 14,7,30) ), y: 23 },
+                    {x: new Date(Date.UTC(2021, 09, 14,7,45) ), y: 21 },
+                    {x: new Date(Date.UTC(2021, 09, 14,7,60) ), y: 19 },
+                    {x: new Date(Date.UTC(2021, 09, 14,8,15) ), y: 18 },
+                    {x: new Date(Date.UTC(2021, 09, 14,8,30) ), y: 15 },
+                    {x: new Date(Date.UTC(2021, 09, 14,8,45) ), y: 13 },
+                    {x: new Date(Date.UTC(2021, 09, 14,8,60) ), y: 8 },
+                    {x: new Date(Date.UTC(2021, 09, 14,9,15) ), y: 15 },
+                    {x: new Date(Date.UTC(2021, 09, 14,9,30) ), y: 17 },
+                    {x: new Date(Date.UTC(2021, 09, 14,9,45) ), y: 20 },
+                    {x: new Date(Date.UTC(2021, 09, 14,9,60) ), y: 25 },
+                ]
+            }
+            ]
+        });
+        chart5.render();
+        function explodePie (e) {
+            // for(var i=0;i<7;i++)
+            // {
+            //     e.dataSeries.dataPoints[i].exploded = false;
+            // }
+	        if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+		        e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+	        } else {
+		    e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+	    }
+        chart.render();
+    }}
+    </script>
+</head>
+<body>
+    <h1>Pie Chart: </h1>
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <h1>Doughnut Chart: </h1>
+    <div id="chartContainer2" style="height: 370px; width: 100%"></div>
+    <h1>Funnel Chart: </h1>
+    <div id="chartContainer3" style="height: 370px; width: 100%"></div>
+    <h1>Pyramid Chart: </h1>
+    <div id="chartContainer4" style="height: 370px; width: 100%"></div>
+    <h1>Time Series Chart: </h1>
+    <div id="chartContainer5" style="height: 370px; width: 100%"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
