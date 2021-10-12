@@ -9,8 +9,8 @@ Mclient.connect(url,(err,db)=>{
     else
     {
         console.log("Connection Established!!")
-        var dbase=db.db('mern2');
-        dbase.createCollection('mernfirst',(err,res)=>{
+        var dbase=db.db('Company');
+        dbase.createCollection('Employee',(err,res)=>{
             if(err)
             {
                 console.log(err);
