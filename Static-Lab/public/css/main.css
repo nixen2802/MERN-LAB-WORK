@@ -1,0 +1,20 @@
+.images{
+    background-image: url('../images/back.jpg');
+    height: 97vh;
+}
+.content{
+    color: #39FF14;
+    font-size: 100px;
+    margin-left: 150px;
+    padding-top: 250px;
+}
+.content2{
+    color: #39FF14;
+    font-size: 100px;
+    margin-left: 600px;
+}
+.buttonmaker{
+    padding: 20px 20px;
+    background-color: bisque;
+    margin-left: 680px;
+}

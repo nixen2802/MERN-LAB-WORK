@@ -1,0 +1,75 @@
+extends layout
+block script
+  script(language='javascript').
+    var i=0;
+    window.onload = function(e){
+      i=0;
+      document.getElementById('counter').innerHTML=i;
+    }
+    function addition(){
+      i=i+1;
+      document.getElementById('counter').innerHTML=i;
+      console.log(i);
+    }
+block content
+  p.header3 Groceries
+  p.show Items added : 
+  span#counter
+  button.w3-btn(onclick="document.getElementById('id01').style.display='block'") Deliver
+  div#id01.w3-modal
+    div.w3-modal-content
+      div.w3-container
+        span.w3-closebtn(onclick="document.getElementById('id01').style.display='none'") ×
+        p.temppar All items will be delivered thank you for using our services!!
+  br
+  br
+  br
+  br
+  br
+  div.card
+    img(src='/images/sauce.jpg' alt='Avatar' style='width:30%; margin-left: 150px; height: 150px')
+    div.containern
+      h4
+        b Sauce
+      p.first Price: &#8377; 100
+      button(onclick='addition()').button.button1 &#43; Add
+  div.card
+    img(src='/images/sprite.jpg' alt='Avatar' style='width:30%; margin-left: 150px; height: 150px')
+    div.containern
+      h4
+        b Sprite
+      p.first Price: &#8377; 70
+      button(onclick='addition()').button.button1 &#43; Add
+  div.card
+    img(src='/images/wafers.jpg' alt='Avatar' style='width:30%; margin-left: 150px; height: 150px')
+    div.containern
+      h4
+        b Wafers
+      p.first Price: &#8377; 10
+      button(onclick='addition()').button.button1 &#43; Add
+  div.card
+    img(src='/images/icecream.jpg' alt='Avatar' style='width:30%; margin-left: 150px; height: 150px')
+    div.containern
+      h4
+        b Icecream
+      p.first Price: &#8377; 135
+      button(onclick='addition()').button.button1 &#43; Add
+  div.card
+    img(src='/images/naturals.jpg' alt='Avatar' style='width:30%; margin-left: 150px; height: 150px')
+    div.containern
+      h4
+        b Naturals
+      p.first Price: &#8377; 70
+      button(onclick='addition()').button.button1 &#43; Add
+  div.card
+    img(src='/images/little.jpg' alt='Avatar' style='width:30%; margin-left: 150px; height: 150px')
+    div.containern
+      h4
+        b.temper Little Hearts
+      p.first Price: &#8377; 10
+      button(onclick='addition()').button.button1 &#43; Add
+  br
+  br
+  br
+  br
+  a(href='http://localhost:3000/' style='color: rgb(22.4%, 100%, 7.8%); font-size: 30px').guider &#8592; Back to home page

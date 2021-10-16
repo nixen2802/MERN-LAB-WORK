@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  div.container
+    p.header1 Sign In
+    br
+    br
+    br
+    form(name="add-estimation", method="post")
+          div.input
+              span.label1 Username:
+              input(type="text", name="username")
+          br
+          br
+          br
+          div.input
+              span.label2 Password:
+              input(type="text", name="password")
+          br
+          br
+          br
+          div.actions
+            input.buttoner(type="submit", value="Sign In")
