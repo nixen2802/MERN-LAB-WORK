@@ -1,0 +1,57 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="updatestudent" method="post">
+        <h4>Roll No. : <%= stri[0] %></h4>
+        <h4>Name : <%= stri[1] %></h4>
+        <h4>Division : <%= stri[2] %></h4>
+        <h4>Year of study : <%= stri[3] %></h>
+        <h4>Branch : <%= stri[4] %></h4>
+        <h4>CGPA : <%= stri[5] %></h4>
+        <div class="input">
+            <span class="label1">CGPA:</span>
+            <input type="number" name="cgpa"/>
+        </div>
+        <br>
+        <div class="actions">
+          <input class="buttoner" type="submit" value="Update data"/>
+        </div>
+      </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="updatestudent" method="post">
+        <% for(var i=0; i < stri.length; i++) { %>
+            <h4>Roll No. : <%= stri[i][0] %></h4>
+            <h4>Name : <%= stri[i][1] %></h4>
+            <h4>Division : <%= stri[i][2] %></h4>
+            <h4>Year of study : <%= stri[i][3] %></h>
+            <h4>Branch : <%= stri[i][4] %></h4>
+            <h4>CGPA : <%= stri[i][5] %></h4>
+         <% } %>
+        <div class="input">
+            <span class="label1">Year of study:</span>
+            <input type="number" name="year_of_study"/>
+        </div>
+        <br>
+        <div class="actions">
+          <input class="buttoner" type="submit" value="Update data"/>
+        </div>
+      </form>
+</body>
+</html>
